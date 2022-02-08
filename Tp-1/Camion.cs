@@ -8,5 +8,7 @@ namespace Tp_1
 {
     class Camion
     {
+
+        private int capacite;
     }
 }
