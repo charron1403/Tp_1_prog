@@ -8,5 +8,7 @@ namespace Tp_1
 {
     class Camionneur
     {
+        private string nom;
+        private string prenom;
     }
 }
