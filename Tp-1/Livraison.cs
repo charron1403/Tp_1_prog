@@ -8,5 +8,7 @@ namespace Tp_1
 {
     class Livraison
     {
+        private int poids;
+        private int volume;
     }
 }
