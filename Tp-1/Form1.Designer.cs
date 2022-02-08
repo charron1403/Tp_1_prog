@@ -29,12 +29,12 @@ namespace Tp_1
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.voyages_gbox = new System.Windows.Forms.GroupBox();
+            this.lst_voyages = new System.Windows.Forms.ListBox();
             this.livraison_incluses_gBox = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lst_livraisons_incluses = new System.Windows.Forms.ListBox();
+            this.livraisons_non_assignees_gBox = new System.Windows.Forms.GroupBox();
+            this.lst_livraisons_non_assignees = new System.Windows.Forms.ListBox();
             this.voyage_selectionne_gBox = new System.Windows.Forms.GroupBox();
             this.txtbox_distance = new System.Windows.Forms.TextBox();
             this.comBoxCamion = new System.Windows.Forms.ComboBox();
@@ -44,42 +44,42 @@ namespace Tp_1
             this.lbl_Camion = new System.Windows.Forms.Label();
             this.lbl_Camionneur = new System.Windows.Forms.Label();
             this.lbl_date = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_ajouter = new System.Windows.Forms.Button();
+            this.btn_retirer = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ajouter_top_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.camionneur_top_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.camion_top_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.livraison_top_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.voyage_top_menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1.SuspendLayout();
+            this.voyages_gbox.SuspendLayout();
             this.livraison_incluses_gBox.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.livraisons_non_assignees_gBox.SuspendLayout();
             this.voyage_selectionne_gBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // voyages_gbox
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 25);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(381, 229);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.voyages_gbox.Controls.Add(this.lst_voyages);
+            this.voyages_gbox.Location = new System.Drawing.Point(13, 25);
+            this.voyages_gbox.Name = "voyages_gbox";
+            this.voyages_gbox.Size = new System.Drawing.Size(403, 229);
+            this.voyages_gbox.TabIndex = 1;
+            this.voyages_gbox.TabStop = false;
+            this.voyages_gbox.Text = "Voyages";
             // 
-            // listBox1
+            // lst_voyages
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 17);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(380, 212);
-            this.listBox1.TabIndex = 1;
+            this.lst_voyages.FormattingEnabled = true;
+            this.lst_voyages.Location = new System.Drawing.Point(0, 17);
+            this.lst_voyages.Name = "lst_voyages";
+            this.lst_voyages.Size = new System.Drawing.Size(403, 212);
+            this.lst_voyages.TabIndex = 1;
             // 
             // livraison_incluses_gBox
             // 
-            this.livraison_incluses_gBox.Controls.Add(this.listBox3);
+            this.livraison_incluses_gBox.Controls.Add(this.lst_livraisons_incluses);
             this.livraison_incluses_gBox.Location = new System.Drawing.Point(500, 289);
             this.livraison_incluses_gBox.Name = "livraison_incluses_gBox";
             this.livraison_incluses_gBox.Size = new System.Drawing.Size(381, 234);
@@ -87,31 +87,31 @@ namespace Tp_1
             this.livraison_incluses_gBox.TabStop = false;
             this.livraison_incluses_gBox.Text = "Livraisons incluses";
             // 
-            // listBox3
+            // lst_livraisons_incluses
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(0, 19);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(380, 212);
-            this.listBox3.TabIndex = 1;
+            this.lst_livraisons_incluses.FormattingEnabled = true;
+            this.lst_livraisons_incluses.Location = new System.Drawing.Point(0, 19);
+            this.lst_livraisons_incluses.Name = "lst_livraisons_incluses";
+            this.lst_livraisons_incluses.Size = new System.Drawing.Size(380, 212);
+            this.lst_livraisons_incluses.TabIndex = 1;
             // 
-            // groupBox3
+            // livraisons_non_assignees_gBox
             // 
-            this.groupBox3.Controls.Add(this.listBox2);
-            this.groupBox3.Location = new System.Drawing.Point(36, 289);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(380, 234);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.livraisons_non_assignees_gBox.Controls.Add(this.lst_livraisons_non_assignees);
+            this.livraisons_non_assignees_gBox.Location = new System.Drawing.Point(13, 289);
+            this.livraisons_non_assignees_gBox.Name = "livraisons_non_assignees_gBox";
+            this.livraisons_non_assignees_gBox.Size = new System.Drawing.Size(403, 234);
+            this.livraisons_non_assignees_gBox.TabIndex = 2;
+            this.livraisons_non_assignees_gBox.TabStop = false;
+            this.livraisons_non_assignees_gBox.Text = "Livraisons non-assignées";
             // 
-            // listBox2
+            // lst_livraisons_non_assignees
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(0, 20);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(380, 212);
-            this.listBox2.TabIndex = 0;
+            this.lst_livraisons_non_assignees.FormattingEnabled = true;
+            this.lst_livraisons_non_assignees.Location = new System.Drawing.Point(0, 20);
+            this.lst_livraisons_non_assignees.Name = "lst_livraisons_non_assignees";
+            this.lst_livraisons_non_assignees.Size = new System.Drawing.Size(403, 212);
+            this.lst_livraisons_non_assignees.TabIndex = 0;
             // 
             // voyage_selectionne_gBox
             // 
@@ -197,23 +197,23 @@ namespace Tp_1
             this.lbl_date.TabIndex = 0;
             this.lbl_date.Text = "Date";
             // 
-            // button1
+            // btn_ajouter
             // 
-            this.button1.Location = new System.Drawing.Point(440, 340);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 60);
-            this.button1.TabIndex = 3;
-            this.button1.Text = ">";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_ajouter.Location = new System.Drawing.Point(440, 340);
+            this.btn_ajouter.Name = "btn_ajouter";
+            this.btn_ajouter.Size = new System.Drawing.Size(35, 60);
+            this.btn_ajouter.TabIndex = 3;
+            this.btn_ajouter.Text = ">";
+            this.btn_ajouter.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_retirer
             // 
-            this.button2.Location = new System.Drawing.Point(440, 421);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(35, 60);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_retirer.Location = new System.Drawing.Point(440, 421);
+            this.btn_retirer.Name = "btn_retirer";
+            this.btn_retirer.Size = new System.Drawing.Size(35, 60);
+            this.btn_retirer.TabIndex = 4;
+            this.btn_retirer.Text = "<";
+            this.btn_retirer.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -265,19 +265,19 @@ namespace Tp_1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 535);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_retirer);
+            this.Controls.Add(this.btn_ajouter);
             this.Controls.Add(this.voyage_selectionne_gBox);
             this.Controls.Add(this.livraison_incluses_gBox);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.livraisons_non_assignees_gBox);
+            this.Controls.Add(this.voyages_gbox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
+            this.voyages_gbox.ResumeLayout(false);
             this.livraison_incluses_gBox.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.livraisons_non_assignees_gBox.ResumeLayout(false);
             this.voyage_selectionne_gBox.ResumeLayout(false);
             this.voyage_selectionne_gBox.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -289,19 +289,19 @@ namespace Tp_1
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox voyages_gbox;
+        private System.Windows.Forms.ListBox lst_voyages;
         private System.Windows.Forms.GroupBox livraison_incluses_gBox;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lst_livraisons_incluses;
+        private System.Windows.Forms.GroupBox livraisons_non_assignees_gBox;
+        private System.Windows.Forms.ListBox lst_livraisons_non_assignees;
         private System.Windows.Forms.GroupBox voyage_selectionne_gBox;
         private System.Windows.Forms.Label lbl_Distance;
         private System.Windows.Forms.Label lbl_Camion;
         private System.Windows.Forms.Label lbl_Camionneur;
         private System.Windows.Forms.Label lbl_date;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_ajouter;
+        private System.Windows.Forms.Button btn_retirer;
         private System.Windows.Forms.TextBox txtbox_distance;
         private System.Windows.Forms.ComboBox comBoxCamion;
         private System.Windows.Forms.ComboBox comBoxCamionneur;
