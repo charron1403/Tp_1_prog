@@ -21,5 +21,11 @@ namespace Tp_1
         {
 
         }
+
+        private void camionneur_top_menu_Click(object sender, EventArgs e)
+        {
+            Form_ajouter_camionneur form_ajouter_camionneur = new Form_ajouter_camionneur();
+            form_ajouter_camionneur.ShowDialog();
+        }
     }
 }

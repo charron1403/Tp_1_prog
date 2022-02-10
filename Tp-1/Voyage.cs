@@ -8,6 +8,7 @@ namespace Tp_1
 {
     class Voyage
     {
+        private string nom_voyage;
         private DateTime date_selectionne;
         private Camion camion_selectionne;
         private Camionneur camionneur_selectionne;

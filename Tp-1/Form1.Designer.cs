@@ -238,8 +238,9 @@ namespace Tp_1
             // camionneur_top_menu
             // 
             this.camionneur_top_menu.Name = "camionneur_top_menu";
-            this.camionneur_top_menu.Size = new System.Drawing.Size(140, 22);
+            this.camionneur_top_menu.Size = new System.Drawing.Size(180, 22);
             this.camionneur_top_menu.Text = "Camionneur";
+            this.camionneur_top_menu.Click += new System.EventHandler(this.camionneur_top_menu_Click);
             // 
             // camion_top_menu
             // 

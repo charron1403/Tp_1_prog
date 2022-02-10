@@ -18,3 +18,4 @@ C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp-1.csproj.GenerateResource.cache
 C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp-1.csproj.CoreCompileInputs.cache
 C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp-1.exe
 C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp-1.pdb
+C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp_1.Form_ajouter_camionneur.resources
