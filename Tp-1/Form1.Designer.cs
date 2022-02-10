@@ -34,6 +34,8 @@ namespace Tp_1
             this.livraisons_non_assignees_gBox = new System.Windows.Forms.GroupBox();
             this.lst_livraisons_non_assignees = new System.Windows.Forms.ListBox();
             this.voyage_selectionne_gBox = new System.Windows.Forms.GroupBox();
+            this.lbl_livraisons_incluses = new System.Windows.Forms.Label();
+            this.lst_livraisons_incluses = new System.Windows.Forms.ListBox();
             this.txtbox_distance = new System.Windows.Forms.TextBox();
             this.comBoxCamion = new System.Windows.Forms.ComboBox();
             this.comBoxCamionneur = new System.Windows.Forms.ComboBox();
@@ -50,8 +52,6 @@ namespace Tp_1
             this.camion_top_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.livraison_top_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.voyage_top_menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.lst_livraisons_incluses = new System.Windows.Forms.ListBox();
-            this.lbl_livraisons_incluses = new System.Windows.Forms.Label();
             this.voyages_gbox.SuspendLayout();
             this.livraisons_non_assignees_gBox.SuspendLayout();
             this.voyage_selectionne_gBox.SuspendLayout();
@@ -113,6 +113,23 @@ namespace Tp_1
             this.voyage_selectionne_gBox.TabStop = false;
             this.voyage_selectionne_gBox.Text = "Voyage sélectionné";
             // 
+            // lbl_livraisons_incluses
+            // 
+            this.lbl_livraisons_incluses.AutoSize = true;
+            this.lbl_livraisons_incluses.Location = new System.Drawing.Point(23, 252);
+            this.lbl_livraisons_incluses.Name = "lbl_livraisons_incluses";
+            this.lbl_livraisons_incluses.Size = new System.Drawing.Size(95, 13);
+            this.lbl_livraisons_incluses.TabIndex = 8;
+            this.lbl_livraisons_incluses.Text = "Livraisons incluses";
+            // 
+            // lst_livraisons_incluses
+            // 
+            this.lst_livraisons_incluses.FormattingEnabled = true;
+            this.lst_livraisons_incluses.Location = new System.Drawing.Point(17, 272);
+            this.lst_livraisons_incluses.Name = "lst_livraisons_incluses";
+            this.lst_livraisons_incluses.Size = new System.Drawing.Size(380, 212);
+            this.lst_livraisons_incluses.TabIndex = 1;
+            // 
             // txtbox_distance
             // 
             this.txtbox_distance.Location = new System.Drawing.Point(249, 145);
@@ -160,7 +177,6 @@ namespace Tp_1
             this.lbl_Camion.Size = new System.Drawing.Size(42, 13);
             this.lbl_Camion.TabIndex = 2;
             this.lbl_Camion.Text = "Camion";
-            this.lbl_Camion.Click += new System.EventHandler(this.label3_Click);
             // 
             // lbl_Camionneur
             // 
@@ -222,43 +238,26 @@ namespace Tp_1
             // camionneur_top_menu
             // 
             this.camionneur_top_menu.Name = "camionneur_top_menu";
-            this.camionneur_top_menu.Size = new System.Drawing.Size(180, 22);
+            this.camionneur_top_menu.Size = new System.Drawing.Size(140, 22);
             this.camionneur_top_menu.Text = "Camionneur";
             // 
             // camion_top_menu
             // 
             this.camion_top_menu.Name = "camion_top_menu";
-            this.camion_top_menu.Size = new System.Drawing.Size(180, 22);
+            this.camion_top_menu.Size = new System.Drawing.Size(140, 22);
             this.camion_top_menu.Text = "Camion";
             // 
             // livraison_top_menu
             // 
             this.livraison_top_menu.Name = "livraison_top_menu";
-            this.livraison_top_menu.Size = new System.Drawing.Size(180, 22);
+            this.livraison_top_menu.Size = new System.Drawing.Size(140, 22);
             this.livraison_top_menu.Text = "Livraison";
             // 
             // voyage_top_menu
             // 
             this.voyage_top_menu.Name = "voyage_top_menu";
-            this.voyage_top_menu.Size = new System.Drawing.Size(180, 22);
+            this.voyage_top_menu.Size = new System.Drawing.Size(140, 22);
             this.voyage_top_menu.Text = "Voyage";
-            // 
-            // lst_livraisons_incluses
-            // 
-            this.lst_livraisons_incluses.FormattingEnabled = true;
-            this.lst_livraisons_incluses.Location = new System.Drawing.Point(17, 272);
-            this.lst_livraisons_incluses.Name = "lst_livraisons_incluses";
-            this.lst_livraisons_incluses.Size = new System.Drawing.Size(380, 212);
-            this.lst_livraisons_incluses.TabIndex = 1;
-            // 
-            // lbl_livraisons_incluses
-            // 
-            this.lbl_livraisons_incluses.AutoSize = true;
-            this.lbl_livraisons_incluses.Location = new System.Drawing.Point(23, 252);
-            this.lbl_livraisons_incluses.Name = "lbl_livraisons_incluses";
-            this.lbl_livraisons_incluses.Size = new System.Drawing.Size(95, 13);
-            this.lbl_livraisons_incluses.TabIndex = 8;
-            this.lbl_livraisons_incluses.Text = "Livraisons incluses";
             // 
             // Form1
             // 
@@ -274,6 +273,7 @@ namespace Tp_1
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.voyages_gbox.ResumeLayout(false);
             this.livraisons_non_assignees_gBox.ResumeLayout(false);
             this.voyage_selectionne_gBox.ResumeLayout(false);

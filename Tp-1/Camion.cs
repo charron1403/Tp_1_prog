@@ -8,7 +8,7 @@ namespace Tp_1
 {
     class Camion
     {
-
-        private int capacite;
+        private int capacite_max;
+        private int poids_max;
     }
 }

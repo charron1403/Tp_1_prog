@@ -8,5 +8,9 @@ namespace Tp_1
 {
     class Voyage
     {
+        private DateTime date_selectionne;
+        private Camion camion_selectionne;
+        private Camionneur camionneur_selectionne;
+        private List<Livraison> list_livraisons_selectionne = new List<Livraison>();
     }
 }
