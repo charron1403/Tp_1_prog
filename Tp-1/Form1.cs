@@ -12,6 +12,11 @@ namespace Tp_1
 {
     public partial class Form1 : Form
     {
+        List<Camionneur> liste_camionneurs = new List<Camionneur>();
+        List<Camion> liste_camions = new List<Camion>();
+        List<Livraison> liste_livraisons = new List<Livraison>();
+        List<Voyage> liste_voyages = new List<Voyage>();
+
         public Form1()
         {
             InitializeComponent();
