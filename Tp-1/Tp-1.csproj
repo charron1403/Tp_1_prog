@@ -54,6 +54,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ajouter_camion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ajouter_camion.Designer.cs">
+      <DependentUpon>Form_ajouter_camion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ajouter_camionneur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Voyage.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ajouter_camion.resx">
+      <DependentUpon>Form_ajouter_camion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ajouter_camionneur.resx">
       <DependentUpon>Form_ajouter_camionneur.cs</DependentUpon>

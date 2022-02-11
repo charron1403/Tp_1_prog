@@ -22,7 +22,7 @@ namespace Tp_1
 
         public override string ToString()
         {
-            return prenom.ToString() + " " + nom.ToString();
+            return nom.ToString() + " " + prenom.ToString();
         }
     }
 }

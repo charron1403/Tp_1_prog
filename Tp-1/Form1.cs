@@ -27,7 +27,7 @@ namespace Tp_1
         private void Form1_Load(object sender, EventArgs e)
         {
             binding_combox_camionneurs.DataSource = liste_camionneurs;
-            comBoxCamion.DataSource = binding_combox_camionneurs;
+            comBoxCamionneur.DataSource = binding_combox_camionneurs;
         }
 
 
@@ -39,13 +39,19 @@ namespace Tp_1
         {
             Form_ajouter_camionneur form_ajouter_camionneur = new Form_ajouter_camionneur();
             form_ajouter_camionneur.Transfert_camionneur_event += transfert_camionneur_event;
-            form_ajouter_camionneur.ShowDialog();
+            form_ajouter_camionneur.Show();
         }
 
         void transfert_camionneur_event(string nom, string prenom)
         {
             liste_camionneurs.Add(new Camionneur(nom, prenom));
             binding_combox_camionneurs.ResetBindings(false);
+        }
+
+        private void camion_top_menu_Click(object sender, EventArgs e)
+        {
+            Form_ajouter_camion form_ajouter_camion = new Form_ajouter_camion();
+            form_ajouter_camion.Show();
         }
     }
 }

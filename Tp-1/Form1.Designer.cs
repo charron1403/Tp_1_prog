@@ -245,19 +245,20 @@ namespace Tp_1
             // camion_top_menu
             // 
             this.camion_top_menu.Name = "camion_top_menu";
-            this.camion_top_menu.Size = new System.Drawing.Size(140, 22);
+            this.camion_top_menu.Size = new System.Drawing.Size(180, 22);
             this.camion_top_menu.Text = "Camion";
+            this.camion_top_menu.Click += new System.EventHandler(this.camion_top_menu_Click);
             // 
             // livraison_top_menu
             // 
             this.livraison_top_menu.Name = "livraison_top_menu";
-            this.livraison_top_menu.Size = new System.Drawing.Size(140, 22);
+            this.livraison_top_menu.Size = new System.Drawing.Size(180, 22);
             this.livraison_top_menu.Text = "Livraison";
             // 
             // voyage_top_menu
             // 
             this.voyage_top_menu.Name = "voyage_top_menu";
-            this.voyage_top_menu.Size = new System.Drawing.Size(140, 22);
+            this.voyage_top_menu.Size = new System.Drawing.Size(180, 22);
             this.voyage_top_menu.Text = "Voyage";
             // 
             // Form1
