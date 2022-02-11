@@ -10,5 +10,19 @@ namespace Tp_1
     {
         private string nom;
         private string prenom;
+
+        public string Nom { get => nom;}
+        public string Prenom { get => prenom;}
+
+        public Camionneur(string nom_, string prenom_)
+        {
+            nom = nom_;
+            prenom = prenom_;
+        }
+
+        public override string ToString()
+        {
+            return prenom.ToString() + " " + nom.ToString();
+        }
     }
 }
