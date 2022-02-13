@@ -18,6 +18,7 @@ namespace Tp_1
         List<Voyage> liste_voyages = new List<Voyage>();
 
         BindingSource binding_combox_camionneurs = new BindingSource();
+        BindingSource binding_combox_camions = new BindingSource();
 
         public Form1()
         {
@@ -28,6 +29,9 @@ namespace Tp_1
         {
             binding_combox_camionneurs.DataSource = liste_camionneurs;
             comBoxCamionneur.DataSource = binding_combox_camionneurs;
+
+            binding_combox_camions.DataSource = liste_camions;
+            comBoxCamion.DataSource = binding_combox_camions;
         }
 
 
@@ -51,7 +55,14 @@ namespace Tp_1
         private void camion_top_menu_Click(object sender, EventArgs e)
         {
             Form_ajouter_camion form_ajouter_camion = new Form_ajouter_camion();
+            form_ajouter_camion.Transfert_camion_event += transfert_camion_event;
             form_ajouter_camion.Show();
+        }
+
+        void transfert_camion_event(int volume_max_, int poids_max_)
+        {
+            liste_camions.Add(new Camion(volume_max_, poids_max_));
+            binding_combox_camions.ResetBindings(false);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Tp_1
     public partial class Form_ajouter_camionneur : Form
     {
         // transfert du nom et du prénom du camionneur vers le main_form
-        public delegate void Transfert_camionneur(String nom, String prenom);
+        public delegate void Transfert_camionneur(string nom, string prenom);
         public event Transfert_camionneur Transfert_camionneur_event;
 
         public Form_ajouter_camionneur()
@@ -25,11 +25,11 @@ namespace Tp_1
         {
             if (txtbox_nom_camionneur.Text == "")
             {
-                MessageBox.Show("Veuillez entrer un nom");
+                MessageBox.Show("Veuillez entrer un nom", "AVERTISSEMENT");
             }
             else if (txtbox_prenom_camionneur.Text == "")
             {
-                MessageBox.Show("Veuillez entrer un prenom");
+                MessageBox.Show("Veuillez entrer un prenom", "AVERTISSEMENT");
             }
             else
             {
