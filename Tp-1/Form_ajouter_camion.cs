@@ -33,6 +33,7 @@ namespace Tp_1
                 else
                 {
                     MessageBox.Show("Veuillez entrer un poids", "AVERTISSEMENT");
+
                 }
             }
             else
