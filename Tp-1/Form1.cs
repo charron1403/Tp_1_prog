@@ -52,6 +52,8 @@ namespace Tp_1
             binding_combox_camionneurs.ResetBindings(false);
         }
 
+        // ---   A J O U T   C A M I O N   ---
+
         private void camion_top_menu_Click(object sender, EventArgs e)
         {
             Form_ajouter_camion form_ajouter_camion = new Form_ajouter_camion();
