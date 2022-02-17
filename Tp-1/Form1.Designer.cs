@@ -254,6 +254,7 @@ namespace Tp_1
             this.livraison_top_menu.Name = "livraison_top_menu";
             this.livraison_top_menu.Size = new System.Drawing.Size(180, 22);
             this.livraison_top_menu.Text = "Livraison";
+            this.livraison_top_menu.Click += new System.EventHandler(this.livraison_top_menu_Click);
             // 
             // voyage_top_menu
             // 

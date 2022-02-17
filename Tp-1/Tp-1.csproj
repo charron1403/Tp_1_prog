@@ -66,6 +66,12 @@
     <Compile Include="Form_ajouter_camionneur.Designer.cs">
       <DependentUpon>Form_ajouter_camionneur.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ajouter_livraison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ajouter_livraison.Designer.cs">
+      <DependentUpon>Form_ajouter_livraison.cs</DependentUpon>
+    </Compile>
     <Compile Include="Livraison.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ajouter_camionneur.resx">
       <DependentUpon>Form_ajouter_camionneur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ajouter_livraison.resx">
+      <DependentUpon>Form_ajouter_livraison.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

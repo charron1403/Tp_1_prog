@@ -19,6 +19,7 @@ namespace Tp_1
 
         BindingSource binding_combox_camionneurs = new BindingSource();
         BindingSource binding_combox_camions = new BindingSource();
+        BindingSource binding_listbox_livraisons = new BindingSource();
 
         public Form1()
         {
@@ -32,6 +33,9 @@ namespace Tp_1
 
             binding_combox_camions.DataSource = liste_camions;
             comBoxCamion.DataSource = binding_combox_camions;
+
+            binding_listbox_livraisons.DataSource = liste_livraisons;
+            lst_livraisons_non_assignees.DataSource = binding_listbox_livraisons;
         }
 
 
@@ -65,6 +69,22 @@ namespace Tp_1
         {
             liste_camions.Add(new Camion(volume_max_, poids_max_));
             binding_combox_camions.ResetBindings(false);
+        }
+
+       
+        //  ---  L I V R A I S O N   A J O U T ---  
+        private void livraison_top_menu_Click(object sender, EventArgs e)
+        {
+            Form_ajouter_livraison form_ajouter_livraison = new Form_ajouter_livraison();
+            form_ajouter_livraison.Transfert_livraison_event += transfert_livraison_event;
+            form_ajouter_livraison.ShowDialog();
+
+        }
+
+        void transfert_livraison_event(int volume, int poids)
+        {
+            liste_livraisons.Add(new Livraison(volume, poids));
+            binding_listbox_livraisons.ResetBindings(false);
         }
     }
 }

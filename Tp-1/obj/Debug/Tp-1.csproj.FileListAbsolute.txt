@@ -20,3 +20,16 @@ C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp-1.exe
 C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp-1.pdb
 C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp_1.Form_ajouter_camionneur.resources
 C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp_1.Form_ajouter_camion.resources
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp-1.csproj.AssemblyReference.cache
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp_1.Form1.resources
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp_1.Form_ajouter_camion.resources
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp_1.Form_ajouter_camionneur.resources
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp_1.Form_ajouter_livraison.resources
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp_1.Properties.Resources.resources
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp-1.csproj.GenerateResource.cache
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp-1.csproj.CoreCompileInputs.cache
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp-1.exe
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp-1.pdb
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\bin\Debug\Tp-1.exe.config
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\bin\Debug\Tp-1.exe
+C:\Users\2165758\Documents\GitHub\Tp_1_prog\Tp-1\bin\Debug\Tp-1.pdb

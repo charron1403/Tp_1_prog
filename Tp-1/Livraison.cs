@@ -10,5 +10,19 @@ namespace Tp_1
     {
         private int poids;
         private int volume;
+
+        public Livraison(int volume_, int poids_)
+        {
+            volume = volume_;
+            poids = poids_;
+        }
+
+        public int Volume { get => volume; set => volume = value; }
+        public int Poids { get => poids; set => poids = value; }
+
+        public override string ToString()
+        {
+            return "Livraison de " + poids.ToString() + " LB avec un volume de " + Volume.ToString();
+        }
     }
 }
