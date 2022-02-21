@@ -75,6 +75,7 @@ namespace Tp_1
             this.lst_voyages.Name = "lst_voyages";
             this.lst_voyages.Size = new System.Drawing.Size(403, 212);
             this.lst_voyages.TabIndex = 1;
+            this.lst_voyages.SelectedIndexChanged += new System.EventHandler(this.lst_voyages_SelectedIndexChanged);
             // 
             // livraisons_non_assignees_gBox
             // 

@@ -40,6 +40,11 @@ namespace Tp_1
 
             binding_listbox_voyages.DataSource = liste_voyages;
             lst_voyages.DataSource = binding_listbox_voyages;
+
+
+
+            actualiser_visibilite_voyage_parametres();
+
         }
 
 
@@ -95,7 +100,44 @@ namespace Tp_1
         {
             liste_voyages.Add(new Voyage(liste_voyages.Count + 1));
             binding_listbox_voyages.ResetBindings(false);
+            actualiser_visibilite_voyage_parametres();
         }
+
+
+
+
+
+
+
+
+
+
+        // --- E D I T   V O Y A G E S ---
+
+        private void lst_voyages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            actualiser_visibilite_voyage_parametres();
+        }
+
+
+        private void actualiser_visibilite_voyage_parametres()
+        {
+            if (lst_voyages.SelectedItem == null)
+            {
+                voyage_selectionne_gBox.Visible = false;
+                voyage_selectionne_gBox.Enabled = false;
+                btn_ajouter.Enabled = false;
+                btn_retirer.Enabled = false;
+            }
+            else
+            {
+                voyage_selectionne_gBox.Visible = true;
+                voyage_selectionne_gBox.Enabled = true;
+                btn_ajouter.Enabled = true;
+                btn_retirer.Enabled = true;
+            }
+        }
+
     }
 }
 
