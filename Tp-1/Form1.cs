@@ -20,6 +20,7 @@ namespace Tp_1
         BindingSource binding_combox_camionneurs = new BindingSource();
         BindingSource binding_combox_camions = new BindingSource();
         BindingSource binding_listbox_livraisons = new BindingSource();
+        BindingSource binding_listbox_voyages = new BindingSource();
 
         public Form1()
         {
@@ -36,6 +37,9 @@ namespace Tp_1
 
             binding_listbox_livraisons.DataSource = liste_livraisons;
             lst_livraisons_non_assignees.DataSource = binding_listbox_livraisons;
+
+            binding_listbox_voyages.DataSource = liste_voyages;
+            lst_voyages.DataSource = binding_listbox_voyages;
         }
 
 
@@ -86,5 +90,12 @@ namespace Tp_1
             liste_livraisons.Add(new Livraison(volume, poids));
             binding_listbox_livraisons.ResetBindings(false);
         }
+        // --- V O Y A G E   A J O U T ---
+        private void voyage_top_menu_Click(object sender, EventArgs e)
+        {
+            liste_voyages.Add(new Voyage(liste_voyages.Count + 1));
+            binding_listbox_voyages.ResetBindings(false);
+        }
     }
 }
+

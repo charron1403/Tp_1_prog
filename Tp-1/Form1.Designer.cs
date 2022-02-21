@@ -261,6 +261,7 @@ namespace Tp_1
             this.voyage_top_menu.Name = "voyage_top_menu";
             this.voyage_top_menu.Size = new System.Drawing.Size(180, 22);
             this.voyage_top_menu.Text = "Voyage";
+            this.voyage_top_menu.Click += new System.EventHandler(this.voyage_top_menu_Click);
             // 
             // Form1
             // 
