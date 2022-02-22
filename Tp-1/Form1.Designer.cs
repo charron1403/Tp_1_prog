@@ -137,6 +137,7 @@ namespace Tp_1
             this.txtbox_distance.Name = "txtbox_distance";
             this.txtbox_distance.Size = new System.Drawing.Size(116, 20);
             this.txtbox_distance.TabIndex = 7;
+            this.txtbox_distance.Leave += new System.EventHandler(this.txtbox_distance_Leave);
             // 
             // comBoxCamion
             // 
@@ -239,28 +240,28 @@ namespace Tp_1
             // camionneur_top_menu
             // 
             this.camionneur_top_menu.Name = "camionneur_top_menu";
-            this.camionneur_top_menu.Size = new System.Drawing.Size(180, 22);
+            this.camionneur_top_menu.Size = new System.Drawing.Size(140, 22);
             this.camionneur_top_menu.Text = "Camionneur";
             this.camionneur_top_menu.Click += new System.EventHandler(this.camionneur_top_menu_Click);
             // 
             // camion_top_menu
             // 
             this.camion_top_menu.Name = "camion_top_menu";
-            this.camion_top_menu.Size = new System.Drawing.Size(180, 22);
+            this.camion_top_menu.Size = new System.Drawing.Size(140, 22);
             this.camion_top_menu.Text = "Camion";
             this.camion_top_menu.Click += new System.EventHandler(this.camion_top_menu_Click);
             // 
             // livraison_top_menu
             // 
             this.livraison_top_menu.Name = "livraison_top_menu";
-            this.livraison_top_menu.Size = new System.Drawing.Size(180, 22);
+            this.livraison_top_menu.Size = new System.Drawing.Size(140, 22);
             this.livraison_top_menu.Text = "Livraison";
             this.livraison_top_menu.Click += new System.EventHandler(this.livraison_top_menu_Click);
             // 
             // voyage_top_menu
             // 
             this.voyage_top_menu.Name = "voyage_top_menu";
-            this.voyage_top_menu.Size = new System.Drawing.Size(180, 22);
+            this.voyage_top_menu.Size = new System.Drawing.Size(140, 22);
             this.voyage_top_menu.Text = "Voyage";
             this.voyage_top_menu.Click += new System.EventHandler(this.voyage_top_menu_Click);
             // 

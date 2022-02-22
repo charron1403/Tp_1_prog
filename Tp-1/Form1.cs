@@ -138,6 +138,29 @@ namespace Tp_1
             }
         }
 
+
+       //  --- V E R I F I C A T I O N   D I S T A N C E ---
+
+        private void txtbox_distance_Leave(object sender, EventArgs e)
+        {
+            if (double.TryParse(txtbox_distance.Text, out double distance_))
+            {
+                if (int.TryParse(txtbox_distance.Text, out int distance_int))
+                {
+                    liste_voyages[lst_voyages.SelectedIndex].Distance = distance_int;
+                }
+                else
+                {
+                    MessageBox.Show("Nombres à virgule non-acceptés : Veuillez entrer un nombre entier", "Erreur");
+                    txtbox_distance.Text = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Caratères non-gérés : NOMBRES ACCEPTÉS SEULEMENT", "Erreur");
+                txtbox_distance.Text = "";
+            }
+        }
     }
 }
 
