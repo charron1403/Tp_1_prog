@@ -41,9 +41,39 @@ namespace Tp_1
             binding_listbox_voyages.DataSource = liste_voyages;
             lst_voyages.DataSource = binding_listbox_voyages;
 
+            liste_voyages.Add(new Voyage(liste_voyages.Count + 1));
+            liste_voyages.Add(new Voyage(liste_voyages.Count + 1));
+
+            liste_livraisons.Add(new Livraison(450, 700));
+            liste_livraisons.Add(new Livraison(400, 120));
+            liste_livraisons.Add(new Livraison(65, 40));
+            liste_livraisons.Add(new Livraison(250, 300));
+
+            liste_camions.Add(new Camion(1200, 950));
+            liste_camions.Add(new Camion(500, 160));
+            liste_camions.Add(new Camion(315, 350));
+            liste_camions.Add(new Camion(70, 50));
+
+            liste_camionneurs.Add(new Camionneur("Paté", "Marina"));
+            liste_camionneurs.Add(new Camionneur("Bozo", "Leclown"));
+            liste_camionneurs.Add(new Camionneur("Gagnon", "Alex"));
+
+            binding_combox_camionneurs.ResetBindings(false);
+            binding_combox_camions.ResetBindings(false);
+            binding_listbox_livraisons.ResetBindings(false);
+            binding_listbox_voyages.ResetBindings(false);
+
+            comBoxCamionneur.SelectedItem = null;
+            comBoxCamion.SelectedItem = null;
+            lst_voyages.SelectedItem = null;
+            lst_livraisons_non_assignees.SelectedItem = null;
 
 
-            actualiser_visibilite_voyage_parametres();
+
+
+            Actualiser_visibilite_voyage_parametres();
+
+
 
         }
 
@@ -55,18 +85,14 @@ namespace Tp_1
         private void camionneur_top_menu_Click(object sender, EventArgs e)
         {
             Form_ajouter_camionneur form_ajouter_camionneur = new Form_ajouter_camionneur();
-            form_ajouter_camionneur.Transfert_camionneur_event += transfert_camionneur_event;
+            form_ajouter_camionneur.Transfert_camionneur_event += Transfert_camionneur_event;
             form_ajouter_camionneur.Show();
         }
 
-        void transfert_camionneur_event(string nom, string prenom)
+        void Transfert_camionneur_event(string nom, string prenom)
         {
             liste_camionneurs.Add(new Camionneur(nom, prenom));
             binding_combox_camionneurs.ResetBindings(false);
-            if (liste_camionneurs.Count < 2)
-            {
-                comBoxCamionneur.SelectedItem = null;
-            }
         }
 
         // ---   A J O U T   C A M I O N   ---
@@ -74,19 +100,14 @@ namespace Tp_1
         private void camion_top_menu_Click(object sender, EventArgs e)
         {
             Form_ajouter_camion form_ajouter_camion = new Form_ajouter_camion();
-            form_ajouter_camion.Transfert_camion_event += transfert_camion_event;
+            form_ajouter_camion.Transfert_camion_event += Transfert_camion_event;
             form_ajouter_camion.Show();
         }
 
-        void transfert_camion_event(int volume_max_, int poids_max_)
+        void Transfert_camion_event(int volume_max_, int poids_max_)
         {
             liste_camions.Add(new Camion(volume_max_, poids_max_));
             binding_combox_camions.ResetBindings(false);
-            if (liste_camions.Count < 2)
-            {
-                comBoxCamion.SelectedItem = null;
-            }
-          
         }
 
        
@@ -94,12 +115,12 @@ namespace Tp_1
         private void livraison_top_menu_Click(object sender, EventArgs e)
         {
             Form_ajouter_livraison form_ajouter_livraison = new Form_ajouter_livraison();
-            form_ajouter_livraison.Transfert_livraison_event += transfert_livraison_event;
+            form_ajouter_livraison.Transfert_livraison_event += Transfert_livraison_event;
             form_ajouter_livraison.ShowDialog();
 
         }
 
-        void transfert_livraison_event(int volume, int poids)
+        void Transfert_livraison_event(int volume, int poids)
         {
             liste_livraisons.Add(new Livraison(volume, poids));
             binding_listbox_livraisons.ResetBindings(false);
@@ -109,7 +130,7 @@ namespace Tp_1
         {
             liste_voyages.Add(new Voyage(liste_voyages.Count + 1));
             binding_listbox_voyages.ResetBindings(false);
-            actualiser_visibilite_voyage_parametres();
+            Actualiser_visibilite_voyage_parametres();
         }
 
 
@@ -125,11 +146,11 @@ namespace Tp_1
 
         private void lst_voyages_SelectedIndexChanged(object sender, EventArgs e)
         {
-            actualiser_visibilite_voyage_parametres();
+            Actualiser_visibilite_voyage_parametres();
         }
 
 
-        private void actualiser_visibilite_voyage_parametres()
+        private void Actualiser_visibilite_voyage_parametres()
         {
             if (lst_voyages.SelectedItem == null)
             {
@@ -157,18 +178,26 @@ namespace Tp_1
             {
                 if (int.TryParse(txtbox_distance.Text, out int distance_int))
                 {
-                    liste_voyages[lst_voyages.SelectedIndex].Distance = distance_int;
+                    if (distance_int >= 0)
+                    {
+                        liste_voyages[lst_voyages.SelectedIndex].Distance = distance_int;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nombres négatifs non-acceptés: Veuillez entrer un nombre positif ! ", "Erreur");
+                        txtbox_distance.Text = liste_voyages[lst_voyages.SelectedIndex].Distance.ToString();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Nombres à virgule non-acceptés : Veuillez entrer un nombre entier", "Erreur");
-                    txtbox_distance.Text = "";
+                    txtbox_distance.Text = liste_voyages[lst_voyages.SelectedIndex].Distance.ToString();
                 }
             }
             else
             {
                 MessageBox.Show("Caratères non-gérés : NOMBRES ACCEPTÉS SEULEMENT", "Erreur");
-                txtbox_distance.Text = "";
+                txtbox_distance.Text = liste_voyages[lst_voyages.SelectedIndex].Distance.ToString();
             }
         }
 
@@ -202,6 +231,7 @@ namespace Tp_1
                 else
                 {
                     MessageBox.Show("Un camionneur doit être sélectionné", "Erreur");
+                    comBoxCamion.SelectedItem = null;
                 }
             }
         }

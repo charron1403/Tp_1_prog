@@ -141,6 +141,7 @@ namespace Tp_1
             // 
             // comBoxCamion
             // 
+            this.comBoxCamion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comBoxCamion.FormattingEnabled = true;
             this.comBoxCamion.Location = new System.Drawing.Point(165, 104);
             this.comBoxCamion.Name = "comBoxCamion";
@@ -150,6 +151,7 @@ namespace Tp_1
             // 
             // comBoxCamionneur
             // 
+            this.comBoxCamionneur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comBoxCamionneur.FormattingEnabled = true;
             this.comBoxCamionneur.Location = new System.Drawing.Point(165, 63);
             this.comBoxCamionneur.Name = "comBoxCamionneur";
