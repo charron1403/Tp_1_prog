@@ -146,6 +146,7 @@ namespace Tp_1
             this.comBoxCamion.Name = "comBoxCamion";
             this.comBoxCamion.Size = new System.Drawing.Size(200, 21);
             this.comBoxCamion.TabIndex = 6;
+            this.comBoxCamion.SelectedIndexChanged += new System.EventHandler(this.comBoxCamion_SelectedIndexChanged);
             // 
             // comBoxCamionneur
             // 
@@ -154,6 +155,7 @@ namespace Tp_1
             this.comBoxCamionneur.Name = "comBoxCamionneur";
             this.comBoxCamionneur.Size = new System.Drawing.Size(200, 21);
             this.comBoxCamionneur.TabIndex = 5;
+            this.comBoxCamionneur.SelectedIndexChanged += new System.EventHandler(this.comBoxCamionneur_SelectedIndexChanged);
             // 
             // dTP_selection
             // 
@@ -161,6 +163,7 @@ namespace Tp_1
             this.dTP_selection.Name = "dTP_selection";
             this.dTP_selection.Size = new System.Drawing.Size(200, 20);
             this.dTP_selection.TabIndex = 4;
+            this.dTP_selection.ValueChanged += new System.EventHandler(this.dTP_selection_ValueChanged);
             // 
             // lbl_Distance
             // 

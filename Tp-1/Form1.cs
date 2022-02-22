@@ -63,6 +63,10 @@ namespace Tp_1
         {
             liste_camionneurs.Add(new Camionneur(nom, prenom));
             binding_combox_camionneurs.ResetBindings(false);
+            if (liste_camionneurs.Count < 2)
+            {
+                comBoxCamionneur.SelectedItem = null;
+            }
         }
 
         // ---   A J O U T   C A M I O N   ---
@@ -78,6 +82,11 @@ namespace Tp_1
         {
             liste_camions.Add(new Camion(volume_max_, poids_max_));
             binding_combox_camions.ResetBindings(false);
+            if (liste_camions.Count < 2)
+            {
+                comBoxCamion.SelectedItem = null;
+            }
+          
         }
 
        
@@ -139,7 +148,8 @@ namespace Tp_1
         }
 
 
-       //  --- V E R I F I C A T I O N   D I S T A N C E ---
+
+       //  verification distance
 
         private void txtbox_distance_Leave(object sender, EventArgs e)
         {
@@ -159,6 +169,40 @@ namespace Tp_1
             {
                 MessageBox.Show("Caratères non-gérés : NOMBRES ACCEPTÉS SEULEMENT", "Erreur");
                 txtbox_distance.Text = "";
+            }
+        }
+
+
+        // changement date
+        private void dTP_selection_ValueChanged(object sender, EventArgs e)
+        {
+            liste_voyages[lst_voyages.SelectedIndex].Date_selectionne = dTP_selection.Value;
+        }
+
+
+        //changement camionneur
+        private void comBoxCamionneur_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comBoxCamionneur.SelectedItem != null)
+            {
+                liste_voyages[lst_voyages.SelectedIndex].Camionneur_selectionne = liste_camionneurs[comBoxCamionneur.SelectedIndex];
+            }
+        }
+
+
+        // changement camion
+        private void comBoxCamion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comBoxCamion.SelectedItem != null)
+            {
+                if (liste_voyages[lst_voyages.SelectedIndex].Camionneur_selectionne != null)
+                {
+                    liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne = liste_camions[comBoxCamion.SelectedIndex];
+                }
+                else
+                {
+                    MessageBox.Show("Un camionneur doit être sélectionné", "Erreur");
+                }
             }
         }
     }
