@@ -17,6 +17,12 @@ namespace Tp_1
             poids = poids_;
         }
 
+        public Livraison(Livraison livraison_a_copier)
+        {
+            volume = livraison_a_copier.Volume;
+            poids = livraison_a_copier.Poids;
+        }
+
         public int Volume { get => volume; set => volume = value; }
         public int Poids { get => poids; set => poids = value; }
 

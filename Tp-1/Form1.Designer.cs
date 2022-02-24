@@ -211,6 +211,7 @@ namespace Tp_1
             this.btn_ajouter.TabIndex = 3;
             this.btn_ajouter.Text = ">";
             this.btn_ajouter.UseVisualStyleBackColor = true;
+            this.btn_ajouter.Click += new System.EventHandler(this.btn_ajouter_Click);
             // 
             // btn_retirer
             // 

@@ -31,5 +31,37 @@ namespace Tp_1
         {
             return "Voyage #" + position_voyage_liste.ToString();
         }
+
+        public string Verifier_avant_ajout_livraison(Livraison livraison_selection)
+        {
+            int poids_ = 0;
+            int volume_ = 0;
+            foreach (Livraison livraison_ in list_livraisons_selectionne)
+            {
+                poids_ += livraison_.Poids;
+                volume_ += livraison_.Volume;
+
+            }
+
+            poids_ += livraison_selection.Poids;
+            volume_ += livraison_selection.Volume;
+
+            if (poids_ <= camion_selectionne.Poids_max && volume_ <= camion_selectionne.Volume_max)
+            {
+                return "ok";
+            }
+            else
+            {
+                if(poids_ <= camion_selectionne.Poids_max && volume_ > camion_selectionne.Volume_max)
+                {
+                    return "volume";
+                }
+                else
+                {
+                    return "poids";
+                }
+            }
+        }
+
     }
 }

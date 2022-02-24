@@ -21,6 +21,7 @@ namespace Tp_1
         BindingSource binding_combox_camions = new BindingSource();
         BindingSource binding_listbox_livraisons = new BindingSource();
         BindingSource binding_listbox_voyages = new BindingSource();
+        BindingSource binding_listbox_livraisons_assignees = new BindingSource();
 
         public Form1()
         {
@@ -40,6 +41,8 @@ namespace Tp_1
 
             binding_listbox_voyages.DataSource = liste_voyages;
             lst_voyages.DataSource = binding_listbox_voyages;
+
+
 
             liste_voyages.Add(new Voyage(liste_voyages.Count + 1));
             liste_voyages.Add(new Voyage(liste_voyages.Count + 1));
@@ -117,7 +120,6 @@ namespace Tp_1
             Form_ajouter_livraison form_ajouter_livraison = new Form_ajouter_livraison();
             form_ajouter_livraison.Transfert_livraison_event += Transfert_livraison_event;
             form_ajouter_livraison.ShowDialog();
-
         }
 
         void Transfert_livraison_event(int volume, int poids)
@@ -125,6 +127,14 @@ namespace Tp_1
             liste_livraisons.Add(new Livraison(volume, poids));
             binding_listbox_livraisons.ResetBindings(false);
         }
+
+       
+
+
+
+
+
+
         // --- V O Y A G E   A J O U T ---
         private void voyage_top_menu_Click(object sender, EventArgs e)
         {
@@ -147,6 +157,7 @@ namespace Tp_1
         private void lst_voyages_SelectedIndexChanged(object sender, EventArgs e)
         {
             Actualiser_visibilite_voyage_parametres();
+            binding_listbox_livraisons_assignees.ResetBindings(false);
         }
 
 
@@ -165,6 +176,13 @@ namespace Tp_1
                 voyage_selectionne_gBox.Enabled = true;
                 btn_ajouter.Enabled = true;
                 btn_retirer.Enabled = true;
+                binding_listbox_livraisons_assignees.DataSource = liste_voyages[lst_voyages.SelectedIndex].List_livraisons_selectionne;
+                lst_livraisons_incluses.DataSource = binding_listbox_livraisons_assignees;
+
+                dTP_selection.Value = liste_voyages[lst_voyages.SelectedIndex].Date_selectionne;
+                comBoxCamion.SelectedItem = liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne;
+                comBoxCamionneur.SelectedItem = liste_voyages[lst_voyages.SelectedIndex].Camionneur_selectionne;
+                txtbox_distance.Text = liste_voyages[lst_voyages.SelectedIndex].Distance.ToString();
             }
         }
 
@@ -235,6 +253,50 @@ namespace Tp_1
                 }
             }
         }
+
+
+
+
+        // --- L I V R A I S O N   N A --> I N C L U S E S
+
+        private void btn_ajouter_Click(object sender, EventArgs e)
+        {
+
+            if (liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne != null)
+            {
+                if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_ajout_livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]) == "ok")
+                {
+                    liste_voyages[lst_voyages.SelectedIndex].List_livraisons_selectionne.Add(new Livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]));
+                    liste_livraisons.RemoveAt(lst_livraisons_non_assignees.SelectedIndex);
+                    binding_listbox_livraisons.ResetBindings(false);
+                    binding_listbox_livraisons_assignees.ResetBindings(false);
+
+                }
+                else if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_ajout_livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]) == "poids")
+                {
+                    MessageBox.Show("Ajout impossible: poids total supérieur au poids maximum du camion", "Erreur");
+                }
+                else if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_ajout_livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]) == "volume")
+                {
+                    MessageBox.Show("Ajout impossible: volume total supérieur au volume maximum du camion", "Erreur");
+                }
+                else
+                {
+                    MessageBox.Show("Ajout impossible: Erreur inconnue --> Veuillez réessayer.", "Erreur");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Un camion doit être sélectionné","Erreur");
+            }
+              
+            
+            
+        }
+
+
+
+
     }
 }
 
