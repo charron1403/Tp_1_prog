@@ -202,7 +202,7 @@ namespace Tp_1
                     }
                     else
                     {
-                        MessageBox.Show("Nombres négatifs non-acceptés: Veuillez entrer un nombre positif ! ", "Erreur");
+                        MessageBox.Show("Nombres négatifs non-acceptés: Veuillez entrer un nombre positif", "Erreur");
                         txtbox_distance.Text = liste_voyages[lst_voyages.SelectedIndex].Distance.ToString();
                     }
                 }
@@ -214,7 +214,7 @@ namespace Tp_1
             }
             else
             {
-                MessageBox.Show("Caratères non-gérés : NOMBRES ACCEPTÉS SEULEMENT", "Erreur");
+                MessageBox.Show("Caratères non-gérés : veuillez entrer SEULEMENT DES NOMBRES", "Erreur");
                 txtbox_distance.Text = liste_voyages[lst_voyages.SelectedIndex].Distance.ToString();
             }
         }
@@ -244,12 +244,30 @@ namespace Tp_1
             {
                 if (liste_voyages[lst_voyages.SelectedIndex].Camionneur_selectionne != null)
                 {
-                    liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne = liste_camions[comBoxCamion.SelectedIndex];
+                    if(liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_changement_camion(liste_camions[comBoxCamion.SelectedIndex]) == "ok")
+                    {
+                        liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne = liste_camions[comBoxCamion.SelectedIndex];
+                    }
+                    else if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_changement_camion(liste_camions[comBoxCamion.SelectedIndex]) == "poids")
+                    {
+                        MessageBox.Show("Changement de camion impossible: poids maximum inférieur au poids total des livraisons sélectionnées", "Erreur");
+                        comBoxCamion.SelectedItem = liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne;
+                    }
+                    else if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_changement_camion(liste_camions[comBoxCamion.SelectedIndex]) == "volume")
+                    {
+                        MessageBox.Show("Changement de camion impossible: volume maximum inférieur au volume total des livraisons sélectionnées", "Erreur");
+                        comBoxCamion.SelectedItem = liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Changement de camion impossible: Erreur inconnue --> Veuillez réessayer.", "Erreur");
+                        comBoxCamion.SelectedItem = liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne;
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Un camionneur doit être sélectionné", "Erreur");
-                    comBoxCamion.SelectedItem = null;
+                    comBoxCamion.SelectedItem = liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne;
                 }
             }
         }
@@ -257,46 +275,78 @@ namespace Tp_1
 
 
 
-        // --- L I V R A I S O N   N A --> I N C L U S E S
+        // --- L I V R A I S O N   N A  -->  I N C L U S E S
 
         private void btn_ajouter_Click(object sender, EventArgs e)
         {
 
-            if (liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne != null)
+            if (lst_livraisons_non_assignees.SelectedItem != null)
             {
-                if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_ajout_livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]) == "ok")
+                if (liste_voyages[lst_voyages.SelectedIndex].Camion_selectionne != null)
                 {
-                    liste_voyages[lst_voyages.SelectedIndex].List_livraisons_selectionne.Add(new Livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]));
-                    liste_livraisons.RemoveAt(lst_livraisons_non_assignees.SelectedIndex);
-                    binding_listbox_livraisons.ResetBindings(false);
-                    binding_listbox_livraisons_assignees.ResetBindings(false);
+                    if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_ajout_livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]) == "ok")
+                    {
+                        liste_voyages[lst_voyages.SelectedIndex].List_livraisons_selectionne.Add(new Livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]));
+                        liste_livraisons.RemoveAt(lst_livraisons_non_assignees.SelectedIndex);
+                        binding_listbox_livraisons.ResetBindings(false);
+                        binding_listbox_livraisons_assignees.ResetBindings(false);
 
-                }
-                else if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_ajout_livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]) == "poids")
-                {
-                    MessageBox.Show("Ajout impossible: poids total supérieur au poids maximum du camion", "Erreur");
-                }
-                else if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_ajout_livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]) == "volume")
-                {
-                    MessageBox.Show("Ajout impossible: volume total supérieur au volume maximum du camion", "Erreur");
+                    }
+                    else if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_ajout_livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]) == "poids")
+                    {
+                        MessageBox.Show("Ajout impossible: poids total supérieur au poids maximum du camion", "Erreur");
+                    }
+                    else if (liste_voyages[lst_voyages.SelectedIndex].Verifier_avant_ajout_livraison(liste_livraisons[lst_livraisons_non_assignees.SelectedIndex]) == "volume")
+                    {
+                        MessageBox.Show("Ajout impossible: volume total supérieur au volume maximum du camion", "Erreur");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ajout impossible: Erreur inconnue --> Veuillez réessayer.", "Erreur");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ajout impossible: Erreur inconnue --> Veuillez réessayer.", "Erreur");
+                    MessageBox.Show("Ajout impossible : Un camion doit être sélectionné", "Erreur");
                 }
             }
             else
             {
-                MessageBox.Show("Un camion doit être sélectionné","Erreur");
+                if (liste_livraisons.Count == 0)
+                {
+                    MessageBox.Show("Ajout impossible : Aucunes livraisons créées","Erreur");
+                }
+                else
+                {
+                    MessageBox.Show("Ajout impossible : Une livraison doit être sélectionnée", "Erreur");
+                }
             }
-              
-            
-            
         }
 
 
+        // --- L I V R A I S O N   N A  <--  I N C L U S E S
 
-
+        private void btn_retirer_Click(object sender, EventArgs e)
+        {
+            if (lst_livraisons_incluses.SelectedItem != null)
+            {
+                liste_livraisons.Add(new Livraison(liste_voyages[lst_voyages.SelectedIndex].List_livraisons_selectionne[lst_livraisons_incluses.SelectedIndex]));
+                liste_voyages[lst_voyages.SelectedIndex].List_livraisons_selectionne.RemoveAt(lst_livraisons_incluses.SelectedIndex);
+                binding_listbox_livraisons.ResetBindings(false);
+                binding_listbox_livraisons_assignees.ResetBindings(false);
+            }
+            else
+            {
+                if (liste_voyages[lst_voyages.SelectedIndex].List_livraisons_selectionne.Count == 0)
+                {
+                    MessageBox.Show("Transfert impossible : Aucune livraison n'est assignée au voyage sélectionné","Erreur");
+                }
+                else
+                {
+                    MessageBox.Show("Transfert impossible : Une livraison doit être sélectionnée", "Erreur");
+                }
+            }
+        }
     }
 }
 

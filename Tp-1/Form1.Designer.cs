@@ -221,6 +221,7 @@ namespace Tp_1
             this.btn_retirer.TabIndex = 4;
             this.btn_retirer.Text = "<";
             this.btn_retirer.UseVisualStyleBackColor = true;
+            this.btn_retirer.Click += new System.EventHandler(this.btn_retirer_Click);
             // 
             // menuStrip1
             // 

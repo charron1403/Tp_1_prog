@@ -32,6 +32,8 @@ namespace Tp_1
             return "Voyage #" + position_voyage_liste.ToString();
         }
 
+
+
         public string Verifier_avant_ajout_livraison(Livraison livraison_selection)
         {
             int poids_ = 0;
@@ -53,6 +55,35 @@ namespace Tp_1
             else
             {
                 if(poids_ <= camion_selectionne.Poids_max && volume_ > camion_selectionne.Volume_max)
+                {
+                    return "volume";
+                }
+                else
+                {
+                    return "poids";
+                }
+            }
+        }
+
+
+
+        public string Verifier_avant_changement_camion(Camion camion_selection)
+        {
+            int poids_total = 0;
+            int volume_total = 0;
+            foreach (Livraison livraison_ in list_livraisons_selectionne)
+            {
+                poids_total += livraison_.Poids;
+                volume_total += livraison_.Volume;
+            }
+
+            if (camion_selection.Poids_max >= poids_total && camion_selection.Volume_max >= volume_total)
+            {
+                return "ok";
+            }
+            else
+            {
+                if (camion_selection.Poids_max >= poids_total && camion_selection.Volume_max < volume_total)
                 {
                     return "volume";
                 }

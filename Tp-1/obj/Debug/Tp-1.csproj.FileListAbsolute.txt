@@ -46,3 +46,4 @@ C:\Users\533\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp-1.csproj.GenerateResou
 C:\Users\533\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp-1.csproj.CoreCompileInputs.cache
 C:\Users\533\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp-1.exe
 C:\Users\533\Documents\GitHub\Tp_1_prog\Tp-1\obj\Debug\Tp-1.pdb
+C:\Users\charr\Desktop\Tp-1\Tp-1\obj\Debug\Tp_1.Form_ajouter_livraison.resources
