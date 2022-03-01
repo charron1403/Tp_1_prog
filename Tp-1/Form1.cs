@@ -96,6 +96,7 @@ namespace Tp_1
         {
             liste_camionneurs.Add(new Camionneur(nom, prenom));
             binding_combox_camionneurs.ResetBindings(false);
+            comBoxCamionneur.SelectedItem = null;
         }
 
         // ---   A J O U T   C A M I O N   ---
@@ -111,6 +112,7 @@ namespace Tp_1
         {
             liste_camions.Add(new Camion(volume_max_, poids_max_));
             binding_combox_camions.ResetBindings(false);
+            comBoxCamion.SelectedItem = null;
         }
 
        
